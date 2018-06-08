@@ -5,7 +5,7 @@ class BinarySearchTree {
     this.right = null;
   }
 //executes a callback on every value in a tree in depth-first order, 
-//going left to right calling back or reading back values, pushing them into an array to see the path taken
+//going all the way left, then steping to the right calling back or stacking back values, pushing them into an array to see the path taken
   depthFirstForEach(cb) {
     cb(this.value);
     if (this.left) {
