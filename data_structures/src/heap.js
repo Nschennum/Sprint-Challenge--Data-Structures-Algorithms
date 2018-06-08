@@ -1,8 +1,28 @@
+// Heapsort is a way of using a heap data tree to sort an array 
+// making a value heiracy data tree (that bubbleUps and siftDown values to continueally modify
+// and popping off the top values into a sorted array adding the top/largest values to the begining of the array
+
 const heapsort = (arr) => {
   /* Your code here */
-  
-};
+  let tmp = [];
+  let sorted = [];
+  let heapy = new Heap();
 
+
+  for (let i = 0; i < arr.length; i++) {
+    heapy.insert(arr[i]);
+  }
+
+  for (let j = 0; j < arr.length; j++) {
+    tmp.push(heapy.delete());
+  }
+
+  for (let k = 0; k < arr.length; k++) {
+    sorted.push(tmp.pop());
+  }
+
+  return sorted;
+}
 
 class Heap {
   constructor() {
@@ -61,6 +81,7 @@ class Heap {
     }
   }
 }
+
 
 module.exports = {
   Heap,
